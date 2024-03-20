@@ -1,0 +1,72 @@
+<p>contact works!</p>
+<div class="row">
+<div class="col-md-4">
+<ul>
+  <li *ngFor="let item of contacts" (click)="displayUserDetail(item)">
+        {{item.name}}
+    <p *ngIf="item.userDetail.length > 0">
+     {{item.userDetail.name}}
+    </p>
+  </li>
+  </ul>
+  
+</div>
+<div class="col-md-8">
+
+    <div *ngIf="selectedContact">
+    <!-- create bootstrap grit with 2 columns in one row-->
+     <div class="row">
+        <div class="col-md-2">
+            <img src="{{selectedContact.userDetail.avatar}}" alt="Avatar" style="width:100%">
+        </div>
+        <div class="col-md-10">
+            <h5>{{selectedContact.userDetail.name}}</h5>
+            <span>{{selectedContact.userDetail.firstName}}</span>
+            <br>
+            <span>{{selectedContact.userDetail.lastName}}</span>
+        </div>
+     </div>
+    <!--create bootstrap rows with lable for email created effective lastLogin isActive userId properties from userDetail-->
+    <div class="row">
+        <div class="col-md-2">
+            <label>Email:</label>
+        </div>
+        <div class="col-md-10">
+            <span>{{selectedContact.userDetail.email}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Created:</label>
+        </div>
+        <div class="col-md-10">
+            <span>{{selectedContact.userDetail.created}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Effective:</label>
+        </div>
+        <div class="col-md-10">
+            <span>{{selectedContact.userDetail.effective}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Last Login:</label>
+        </div>
+        <div class="col-md-10">
+            <span>{{selectedContact.userDetail.lastLogin}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Is Active:</label>
+        </div>
+        <div class="col-md-10">
+            <input type="checkbox" [(ngModel)]="selectedContact.userDetail.isActive">
+        </div>
+        </div>
+    </div>
+</div>
+</div>
