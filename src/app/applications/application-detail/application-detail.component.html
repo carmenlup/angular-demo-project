@@ -1,0 +1,11 @@
+<p>application-detail works!</p>
+
+<div >
+    <h2>{{ application.name }}</h2>
+    {{applicationDetail.name}}
+    <!-- other details here -->
+    <button (click)="editApplication()">Edit</button>
+  </div>
+  <ng-template #selectPrompt>
+    <p>Please select an application.</p>
+  </ng-template>

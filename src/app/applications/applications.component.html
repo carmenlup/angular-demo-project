@@ -1,0 +1,19 @@
+<p>applications works!</p>
+<!--create a 2 columns grid and one row using bootstrap. First column is col-nd-4 and second col-md-8. 
+    Second column contains application-detail component html-->
+<div class="row">
+    <div class="col-md-4">
+        <ul>
+            <li *ngFor="let item of applications" (click)="getApplicationDetail(item)">
+                {{item.name}}
+                <!-- <p *ngIf="item.applicationDetail.length > 0">
+                    {{item.applicationDetail.name}}
+                </p> -->
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <div *ngIf="selectedApplication">
+            <app-application-detail [application]="selectedApplication"></app-application-detail>
+        </div>
+    </div>
